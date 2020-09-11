@@ -1,0 +1,157 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;    
+}
+:root{
+       /* Top heart */
+    --top-heart-size:20px;
+
+    /* Middle heart */
+    --middle-heart-size:50px;
+
+    /* Bottom heart */
+
+    /* General Setting */
+    --heart-color: pink;
+     --heart-size-ratio:calc(var(--top-heart-size) / 2);
+}
+.wrapper{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: navy;
+}
+.container{
+    height: 80%;
+    width: 100%;
+    background:navy;
+    display:flex;
+    flex-direction: column;
+}
+.card{
+    display: flex;
+    align-items:center;
+    position: relative;
+    height: 500px;
+    width: 300px;
+    padding: 10px 20px;
+    border: 3px solid #ffffff;
+    border-radius: 5px;
+    color:#ffffff;
+
+}
+.card::before{
+    position:absolute;
+    top:0;
+    left:0;
+    content:"A";
+    font-size: 3rem;
+    color:#ffffff;
+    margin:2px 13px;    
+}
+.card::after{
+    position: absolute;
+    bottom:0;
+    right: 0;   
+    content:"A";
+    font-size: 3rem;
+    color:#ffffff; 
+    margin:1px 13px;   
+    transform:rotate(180deg);
+}
+.box-top, .box-middle, .box-bottom{
+    height: 33%;
+}
+
+.box-top{
+    
+}
+.box-middle{
+display: flex;
+align-items: center;
+justify-content: center;
+   
+}
+.box-bottom{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}    
+.top-heart{
+    height: var(--top-heart-size);
+    width: var(--top-heart-size);
+    background:var(--heart-color);
+    transform: rotate(-45deg);       
+}
+.top-heart::before{
+    content: "";  
+    height: 100%; 
+    width: 100%;
+    border-radius: 50%;
+    background: var(--heart-color);
+    position: absolute;
+    top:calc(var(--top-heart-size)/2*-1);
+}
+.top-heart::after{
+    content: "";  
+    height: 100%; 
+    width: 100%;
+    border-radius: 50%;
+    background: var(--heart-color);
+    position: absolute;
+    left:calc(var(--top-heart-size)/2*1);
+}
+.middle-heart{
+    height: var(--middle-heart-size);
+    width: var(--middle-heart-size);
+    background:var(--heart-color);
+    transform: rotate(-45deg);       
+}
+.middle-heart::before{
+    content:"";
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background: var(--heart-color);  
+    position: absolute;
+    top:calc(var(--middle-heart-size)/2*-1)
+}
+.middle-heart::after{
+    content:"";
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background: var(--heart-color);
+    position: absolute;
+    left:calc(var(--middle-heart-size)/2*1)
+}
+.bottom-heart::before{
+    content: "";
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background: var(--heart-color);
+    position: absolute;
+    top:calc(var(--top-heart-size)/2*-1);
+}
+
+.bottom-heart{
+    height: var(--top-heart-size);
+    width: var(--top-heart-size);
+    background:var(--heart-color);
+    transform: translateY(2px) rotate(135deg);       
+}
+
+.bottom-heart::after{
+    content: "";
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background: var(--heart-color);
+    position: absolute;
+    left:calc(var(--top-heart-size)/2*1);
+}
+
